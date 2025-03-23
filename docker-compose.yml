@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://admin:password@localhost:27017/quizapp?authSource=admin
+      - JWT_SECRET=8639bf9bf06678ab3016eec8e1cfb161ffb91e734202149f461ddb0058a382c2650ddbe5a43279b5fd593cfc8b81afaca6a35fc990f9db01118cebc83fde02bf
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
