@@ -23,8 +23,8 @@ jobs:
         node-version: '16'
     - env:
           NODE_ENV: test
-          run: npm ci
-          run: npm test
+    - run: npm ci
+    - run: npm test
 
   deploy:
     needs: build
